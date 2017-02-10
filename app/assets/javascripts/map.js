@@ -40,7 +40,7 @@ function initMap() {
 function markerListener(map) {
   $("#submit").on('click', function(e) {
     $.ajax({
-      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#street_address").val().replace(/ /g , "+") + "&key=AIzaSyDD3A-EVGpDa1fQ9bdueWnSWk3J32grjCs",
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#street_address").val().replace(/ /g , "+") + "&key=???",
       success: function(response) {
         var marker = new google.maps.Marker({
           position: response.results[0].geometry.location
