@@ -2,8 +2,6 @@ $(document).ready(function(){
   initMap();
 })
 
-var googleMapsSecret = $('body').data('env')
-
 function initMap() {
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {
@@ -40,7 +38,7 @@ function initMap() {
 function markerListener(map) {
   $("#submit").on('click', function(e) {
     $.ajax({
-      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#street_address").val().replace(/ /g , "+") + "&key=" + googleMapsSecret,
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + $("#street_address").val().replace(/ /g , "+") + "&key=<%= ENV['google_maps_secret'] %>",
       success: function(response) {
         var marker = new google.maps.Marker({
           position: response.results[0].geometry.location
