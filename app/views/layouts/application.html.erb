@@ -8,7 +8,7 @@
 
   </head>
 
-  <body>
+  <body data-env="<%= ENV['google_maps_secret'] %>">
 
     <div class="container">
     <% flash.each do |type, message| %>
