@@ -13,7 +13,7 @@ RSpec.feature "User creates a petition" do
 
   end
 
-  scenario "User enters addresss for apartment that has a campaign" do
+  scenario "User enters address for apartment that has a campaign" do
 
     apt = Apartment.create(street_address: "1000 Broadway")
     Petition.create(apartment: apt)
@@ -30,7 +30,7 @@ RSpec.feature "User creates a petition" do
 
   end
 
-  scenario "User enters empty addresss for apartment and receives an error" do
+  scenario "User enters empty address for apartment and receives an error" do
 
     visit '/'
     fill_in "street_address", with: ""

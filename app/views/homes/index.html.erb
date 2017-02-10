@@ -11,10 +11,10 @@
       <div class="panel-body new-link-section">
 
 
-            <%= form_for @apartment do |f| %>
+            <%= form_for @apartment, html: {id: 'address-form'} do |f| %>
             <div class="input-group">
               <%= f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">
-              <%= f.button "Submit", class: "btn btn-primary"%></span>
+              <%= f.button "Submit", id: "submit", class: "btn btn-primary"%></span>
             </div>
             <% end %>
   </div>
