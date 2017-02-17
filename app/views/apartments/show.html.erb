@@ -1,4 +1,52 @@
 
 
+
 <h1> Address: <%= @apartment.street_address %></h1>
 <p>Votes: <%= @apartment.petition.vote_count %></p>
+
+<div id="calculator">
+  <label>Number Of Units:</label>
+  <input type="number" id="num-units" />
+
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Size</th>
+        <th>2x/wk</th>
+        <th>1x/wk</th>
+        <th>.5x/wk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>64 gal</td>
+        <td id="64x2"></td>
+        <td id="64x1"></td>
+        <td id="64x.5"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>64 gal</td>
+        <td id="96x2"></td>
+        <td id="96x1"></td>
+        <td id="96x.5"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>2 cu yd</td>
+        <td id="2x2"></td>
+        <td id="2x1"></td>
+        <td id="2x.5"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3 gal</td>
+        <td id="3x2"></td>
+        <td id="3x1"></td>
+        <td id="3x.5"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
