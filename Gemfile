@@ -39,8 +39,10 @@ group :development, :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'simplecov', :require => false, :group => :test
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
 
 group :development do
