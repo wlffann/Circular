@@ -6,9 +6,9 @@
 
 <div id="calculator">
   <label>Number Of Units:</label>
-  <input type="number" id="num-units" />
+  <input id="num-units" type="number" pattern="[0-9]*" inputmode="numeric" />
 
-  <table>
+  <table id="calc-table">
     <thead>
       <tr>
         <th>Type</th>
@@ -22,31 +22,32 @@
       <tr>
         <td></td>
         <td>64 gal</td>
-        <td id="64x2"></td>
-        <td id="64x1"></td>
-        <td id="64x.5"></td>
+        <td class="calc-output" data-gallons="64" data-pickups=2></td>
+        <td class="calc-output" data-gallons="64" data-pickups=1></td>
+        <td class="calc-output" data-gallons="64" data-pickups=0.5></td>
       </tr>
       <tr>
         <td></td>
-        <td>64 gal</td>
-        <td id="96x2"></td>
-        <td id="96x1"></td>
-        <td id="96x.5"></td>
+        <td>96 gal</td>
+        <td class="calc-output" data-gallons="96" data-pickups=2></td>
+        <td class="calc-output" data-gallons="96" data-pickups=1></td>
+        <td class="calc-output" data-gallons="96" data-pickups=0.5></td>
       </tr>
       <tr>
         <td></td>
         <td>2 cu yd</td>
-        <td id="2x2"></td>
-        <td id="2x1"></td>
-        <td id="2x.5"></td>
+        <td class="calc-output" data-gallons="404" data-pickups=2></td>
+        <td class="calc-output" data-gallons="404" data-pickups=1></td>
+        <td class="calc-output" data-gallons="404" data-pickups=0.5></td>
       </tr>
       <tr>
         <td></td>
-        <td>3 gal</td>
-        <td id="3x2"></td>
-        <td id="3x1"></td>
-        <td id="3x.5"></td>
+        <td>3 cu yd</td>
+        <td class="calc-output" data-gallons="605" data-pickups=2></td>
+        <td class="calc-output" data-gallons="605" data-pickups=1></td>
+        <td class="calc-output" data-gallons="605" data-pickups=0.5></td>
       </tr>
     </tbody>
   </table>
+
 </div>
