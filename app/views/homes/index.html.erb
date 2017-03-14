@@ -11,20 +11,21 @@
       </div>
 
       <div class="panel-body new-link-section">
-
-
-            <%= form_for @apartment do |f| %>
-            <div class="input-group">
-              <%= f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">
-              <%= f.button "Submit", class: "btn btn-primary"%></span>
-            </div>
-            <% end %>
+        <%= form_for @campaign do |f| %>
+          <div class="input-group">
+            <%= f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">
+            <%= f.button "Submit", class: "btn btn-primary"%></span>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
-<h3>All Apartments</h3>
+
+<h3>All Campaigns</h3>
 <ul class="list-group">
-<% @apartments.each do |apartment| %>
-    <li class="list-group-item"><%= apartment.street_address%></li>
-<% end %>
+  <% @campaigns.each do |campaign| %>
+    <li class="list-group-item"><%= campaign.street_address%></li>
+  <% end %>
 </ul>

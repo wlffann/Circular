@@ -9,6 +9,7 @@
 
     <div class="col-md-3">
       <ul class="top-nav-list">
+        <%= link_to "Search", campaigns_path %>
         <% if current_user %>
           <li>Signed in as <strong><%= current_user.name %></strong></li>
           <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>

@@ -1,0 +1,4 @@
+<% @campaigns.each do |campaign| %>
+  Street Address: <%= link_to campaign.street_address, campaign_path(campaign) %><br>
+  Vote Count: <%= campaign.vote_count %><br><br>
+<% end %>
