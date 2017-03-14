@@ -9,10 +9,11 @@ RSpec.describe Petition, type: :model do
   end
 
   it "should not create a petition if one already exists for apartment" do
-    apt = Apartment.create(street_address: "test")
-    Petition.create(apartment: apt)
+    petition = create(:petition)
+    apt = Apartment.first
+    copy_petition = build(:petition, apartment: apt)
     expect(Petition.count).to eq(1)
-    expect { Petition.create!(apartment: apt) }.to raise_error
+    expect(copy_petition).not_to be_valid
     expect(Petition.count).to eq(1)
   end
 

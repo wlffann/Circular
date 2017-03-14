@@ -10,6 +10,6 @@ FactoryGirl.define do
   end
 
   factory :petition do
-    association :apartment, factory: :apartment
+    apartment
   end
 end
