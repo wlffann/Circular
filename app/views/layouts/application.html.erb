@@ -10,7 +10,7 @@
   </head>
 
   <body>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_secret']%>&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_secret']%>&callback=initMap&libraries=places"></script>
     
     <div class="container">
       <%= render partial: "layouts/navbar" %>

@@ -1,13 +1,39 @@
+var map;
+var infowindow;
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location,
+    label: 'R'
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+function placesCallback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+}
+
 function initMap(){
   var geocoder = new google.maps.Geocoder();
 
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var denver = new google.maps.LatLng(39.7392,-104.9903);
+  map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
-          center: {
-            lat: 39.7392, 
-            lng: -104.9903
-          }
+          center: denver
         });
+
+  infowindow = new google.maps.InfoWindow();
  
   <% Apartment.all.each do |apartment| %>
     geocoder.geocode( { 'address': "<%= apartment.street_address %>"}, function(results, status) {
@@ -24,4 +50,14 @@ function initMap(){
   });
 
   <% end %>
+
+  var request = {
+    location: denver,
+    radius: 1000,
+    query: 'places to dropoff recycling'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, placesCallback);
+
 }
