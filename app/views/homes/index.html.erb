@@ -1,5 +1,3 @@
-<div id="map"></div>
-
 <h1>Tenants</h1>
 
 <div class="row">
@@ -16,7 +14,7 @@
             <%= form_for @apartment do |f| %>
             <div class="input-group">
               <%= f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">
-              <%= f.button "Submit", class: "btn btn-primary"%></span>
+              <%= f.button "Submit", class: "btn btn-primary submit-address"%></span>
             </div>
             <% end %>
   </div>
