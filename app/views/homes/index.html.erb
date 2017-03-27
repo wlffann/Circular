@@ -11,12 +11,14 @@
       <div class="panel-body new-link-section">
 
 
-            <%= form_for @apartment do |f| %>
-            <div class="input-group">
-              <%= f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">
-              <%= f.button "Submit", class: "btn btn-primary submit-address"%></span>
-            </div>
-            <% end %>
+            <!--< %/= form_for @apartment do |f| %>-->
+            <!--<div class="input-group">-->
+              <!--< % = f.text_field :street_address, id: "street_address", class: "form-control", placeholder: "street address" %><span class="input-group-btn">-->
+              <!--< % = f.button "Submit", class: "btn btn-primary submit-address"%></span>-->
+            <!--</div>-->
+            <!--< % end %>-->
+
+        <input type="text" name="street-address" id="street-address"><button type="submit" class="submit-address">Add</button>
   </div>
 </div>
 

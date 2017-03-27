@@ -16,12 +16,15 @@ function initMap(){
 function addAddress(){
   var geocoder = new google.maps.Geocoder();
   $('.submit-address').click(function(){
-    codeAddress(geocoder);
+    // codeAddress(geocoder);
+    var address = $('#street-address').val();
+    console.log(address);
   })
 }
 
 function codeAddress(geocoder){
   var address = $('.submit-address').val();
+  console.log(address);
   if(address.length > 0){
     geocoder.geocode({'address': address}, function(result, status){
       debugger;
