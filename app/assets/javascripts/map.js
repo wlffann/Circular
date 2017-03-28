@@ -14,11 +14,13 @@ function initMap(){
 }
 
 function addAddress(){
-  var geocoder = new google.maps.Geocoder();
-  $('.submit-address').click(function(){
+  // var geocoder = new google.maps.Geocoder();
+  $('.submit-address').on('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("Here");
     // codeAddress(geocoder);
-    var address = $('#street-address').val();
-    console.log(address);
+    // var address = $('#street-address').val();
   })
 }
 
