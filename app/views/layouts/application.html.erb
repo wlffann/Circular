@@ -4,7 +4,7 @@
     <title>Circular</title>
     <%= csrf_meta_tags %>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_secret']%>&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_secret']%>"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
@@ -24,8 +24,8 @@
     <% end %>
 
       <div id="map"></div>
-    
-    
+
+
     <%= yield %>
 
   </div>

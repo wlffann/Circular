@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
   initMap();
   addAddress();
@@ -18,10 +19,10 @@ function addAddress(){
   $('.submit-address').on('click', function(e){
     e.preventDefault();
     e.stopPropagation();
-    console.log("Here");
+    console.log($('#street-address').val());
     // codeAddress(geocoder);
     // var address = $('#street-address').val();
-  })
+  });
 }
 
 function codeAddress(geocoder){
