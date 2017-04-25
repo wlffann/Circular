@@ -1,12 +1,17 @@
 class ApartmentsController < ApplicationController
-  protect_from_forgery except: :show
-  @booly = false
+  protect_from_forgery except: [:show, :find]
 
   def show
-
     @apartment = Apartment.find(params[:id])
-    @booly = false
-    
+  end
+
+  def find
+    @apartment = Apartment.find_by("street_address": params[:street_address])
+    if @apartment
+      render :js => "window.location = '#{apartment_path(@apartment.id)}'"
+    else
+      render status: 404
+    end
   end
 
   def create
